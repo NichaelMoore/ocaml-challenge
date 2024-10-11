@@ -1,3 +1,3 @@
-let b = true
+let b = true;;
 
-let nand b1 b2 = not (b1 && b2)
+let nand b1 b2 = not (b1 && b2);;
