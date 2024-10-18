@@ -1,18 +1,14 @@
-let xor1 (a : bool) (b : bool) :
-bool =  (a || b) && not (a && b);;
+let xor : bool -> bool -> bool =
+  fun a b ->
+    (a && not b) || (not a && b)
 
-let xor2 (a : bool) (b : bool) :
-bool = 
-if a 
-  then 
-    (if b
-      then false
-    else true)
-  else 
-    (if b
-      then true
-    else false)
+let xor : bool -> bool -> bool =
+  fun a b ->
+    if a then not b else b
 
-let xor3 : bool -> bool -> bool =
-  fun a b: bool ->
-    not a && b || a && not b
+let xor : bool -> bool -> bool =
+  fun a b ->
+    match (a, b) with
+    | (true, false) -> true
+    | (false, true) -> true
+    | _ -> false
