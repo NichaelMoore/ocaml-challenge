@@ -1,7 +1,18 @@
-let b1 = true;;
+let xor1 (a : bool) (b : bool) :
+bool =  (a || b) && not (a && b);;
 
-let b2 = true;;
+let xor2 (a : bool) (b : bool) :
+bool = 
+if a 
+  then 
+    (if b
+      then false
+    else true)
+  else 
+    (if b
+      then true
+    else false)
 
-let xor b1 b2 = (b1 || b2) && not (b1 && b2);;
-
-print_endline(string_of_bool(xor b1 b2));;
+let xor3 : bool -> bool -> bool =
+  fun a b: bool ->
+    not a && b || a && not b

@@ -1,7 +1,19 @@
-let b1 = true;;
+let a = true;;
 
-let b2 = false;;
+let b = false;;
 
-let nand b1 b2 = not (b1 && b2);;
+let nand a b = not (a && b);;
 
-print_endline(string_of_bool(nand b1 b2));;
+let nand2 (a : bool) (b : bool) :
+bool = if a 
+    then (*[a] is true*)
+        (if b
+            then (*[b] is true*) false
+        else true)
+
+    else (*[a] is false*) 
+        false
+
+let nand3 : bool -> bool -> bool =
+    fun a b ->
+        not (a && b)
